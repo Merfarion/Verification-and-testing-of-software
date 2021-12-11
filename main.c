@@ -76,11 +76,11 @@ int main(void)
 		"Task 1",	/* Text name for the task.  This is to facilitate debugging only. */
 		1000,		/* Stack depth - most small microcontrollers will use much less stack than this. */
 		NULL,		/* We are not using the task parameter. */
-		1,			/* This task will run at priority 1. */
+		2,			/* This task will run at priority 1. */
 		NULL);		/* We are not using the task handle. */
 
 /* Create the other task in exactly the same way. */
-	xTaskCreate(vTask2, "Task 2", 1000, NULL, 1, NULL);
+	xTaskCreate(vTask2, "Task 2", 1000, NULL, 2, NULL);
 
 	/* Start the scheduler to start the tasks executing. */
 	vTaskStartScheduler();
